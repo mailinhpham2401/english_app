@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>create</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="addFlashCard" (submit)="createFlashCard()">
+    <div class="flip-container" (click)="flip()" [class.flipped]="flipped">
+      <div class="flipper">
+        <div class="flash-card-front">
+          <ion-input formControlName="front" type="text" placeholder="">
+          </ion-input>
+        </div>
+        <div class="flash-card-back">
+          <ion-input formControlName="back" type="text" placeholder="">
+          </ion-input>
+        </div>
+      </div>
+    </div>
+    <ion-button
+      expand="block"
+      type="submit"
+      [disabled]="!createFlashCard.valid"
+    >
+      Add Flashcard
+    </ion-button>
+  </form>
+</ion-content>

@@ -6,15 +6,21 @@ import { HomePage } from "./home.page";
 
 import { HomePageRoutingModule } from "./home-routing.module";
 import { ComponentsModule } from "../components/components.module";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    FontAwesomeModule,
     HomePageRoutingModule,
     ComponentsModule,
+    Ng2SearchPipeModule,
   ],
   declarations: [HomePage],
 })
-export class HomePageModule {}
+export class HomePageModule {
+  searchText;
+}

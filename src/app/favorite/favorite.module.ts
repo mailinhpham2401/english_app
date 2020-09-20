@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 
 import { IonicModule } from "@ionic/angular";
 
-import { CreatePageRoutingModule } from "./create-routing.module";
+import { FavoritePageRoutingModule } from "./favorite-routing.module";
 
-import { CreatePage } from "./create.page";
+import { FavoritePage } from "./favorite.page";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 @NgModule({
@@ -15,9 +15,8 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
     FormsModule,
     IonicModule,
     FontAwesomeModule,
-    CreatePageRoutingModule,
-    ReactiveFormsModule,
+    FavoritePageRoutingModule,
   ],
-  declarations: [CreatePage],
+  declarations: [FavoritePage],
 })
-export class CreatePageModule {}
+export class FavoritePageModule {}

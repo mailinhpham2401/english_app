@@ -47,6 +47,7 @@ export class FirebaseService {
   getFlashCards(): Observable<FlashCard[]> {
     return of(this.flashCards);
   }
+
   //geting single flashCard
 
   getFlashCard(id: string): Observable<FlashCard> {
@@ -77,9 +78,9 @@ export class FirebaseService {
   }
   // delete flashCard
 
-  deleteFlashCard(id: string): Promise<void> {
+  /* deleteFlashCard(id: string): Promise<void> {
     return this.flashCardCollection.doc(id).delete();
-  }
+  } */
 
   shuffle(array) {
     let currentIndex = array.length,

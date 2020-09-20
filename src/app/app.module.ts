@@ -11,6 +11,15 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule, SETTINGS } from "@angular/fire/firestore";
 import { environment } from "../environments/environment";
+import { Ng2SearchPipeModule } from "ng2-search-filter";
+
+import {
+  FontAwesomeModule,
+  FaIconLibrary,
+} from "@fortawesome/angular-fontawesome";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
+import { fab } from "@fortawesome/free-brands-svg-icons";
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +30,8 @@ import { environment } from "../environments/environment";
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    FontAwesomeModule,
+    Ng2SearchPipeModule,
   ],
   providers: [
     StatusBar,
@@ -30,4 +41,9 @@ import { environment } from "../environments/environment";
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  searchText;
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, fab, far);
+  }
+}

@@ -1,20 +1,93 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> Englische Vokabel </ion-title>
+    <ion-title>
+      <div class="row no-gutters">
+        <div class="col-0 pt-2">Lin</div>
+        <div class="col guinary pt-2">guinary</div>
+        <div class="col-0">
+          <ion-buttons slot="end">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+        </div>
+      </div>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <app-flash-card *ngFor="let flashcard of (flashCardList|async)">
+  <div class="input-group col-md-4 mx-auto">
+    <input
+      class="form-control py-2 border-right-0 border"
+      type="text"
+      name="search"
+      [(ngModel)]="searchText"
+      autocomplete="off"
+    />
+    <span class="input-group-append">
+      <button
+        class="btn btn-outline-secondary border-left-0 border"
+        type="button"
+        style="background-color: white"
+      >
+        <fa-icon icon="search"></fa-icon>
+      </button>
+    </span>
+  </div>
+
+  <ion-menu side="start" content-id="main-content">
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="heart" slot="start"></ion-icon>
+          <ion-label>Favorites</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <app-flash-card
+    *ngFor="let flashcard of (flashCardList|async) | filter:searchText"
+  >
     <div class="flash-card-front">{{flashcard.front}}</div>
 
-    <div class="flash-card-back">
-      {{flashcard.back}}
-      <ion-buttons slot="primary">
-        <ion-button color="secondary" routerLink="/create">
-          <ion-icon slot="icon-only" name="add">Add</ion-icon>
-        </ion-button>
-      </ion-buttons>
+    <div class="flash-card-back container-fluid">
+      <div class="row">
+        <div class="col-5 col-md-5"></div>
+        <div class="col-3 col-md-4">{{flashcard.back}}</div>
+        <div class="col-4 col-md-2">
+          <div class="row">
+            <div class="col-0">
+              <ion-buttons>
+                <ion-button color="secondary" routerLink="/create">
+                  <ion-icon name="add-outline"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </div>
+            <div class="col-0">
+              <ion-buttons>
+                <ion-button color="secondary">
+                  <ion-icon name="heart"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </div>
+            <div class="col-0">
+              <ion-buttons>
+                <ion-button
+                  color="secondary"
+                  (click)="deleteFlashCard(flashcard.id)"
+                >
+                  <ion-icon name="trash-outline"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </app-flash-card>
 </ion-content>

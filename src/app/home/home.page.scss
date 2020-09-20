@@ -1,3 +1,36 @@
+:root {
+  --ion-safe-area-top: 20px;
+  --ion-safe-area-bottom: 22px;
+}
+
+* {
+  font-family: "Source Sans Pro" !important;
+  font-style: normal;
+  /* source-sans-pro-regular - latin */
+}
+
+ion-toolbar {
+  --color: rgb(4, 206, 206);
+  --background: rgb(0, 58, 58);
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+ion-content {
+  --color: white;
+  --background: rgb(1, 94, 94);
+}
+
+.form-control:focus,
+button:focus {
+  outline: 0 !important;
+  border-color: initial;
+  box-shadow: none;
+}
+.guinary {
+  color: white;
+}
+
 #container {
   text-align: center;
 
@@ -16,9 +49,7 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-
   color: #8c8c8c;
-
   margin: 0;
 }
 

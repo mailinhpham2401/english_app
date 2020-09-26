@@ -20,6 +20,11 @@ ion-button {
   --background: rgb(4, 206, 206);
 }
 
+ion-item {
+  color: white;
+  --background: rgb(1, 94, 94);
+}
+
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000px;

@@ -1,0 +1,13 @@
+{
+  "flashcards": [
+    { "id": 1, "back": "accreditation", "front": "offizielle Zustimmung" },
+    {
+      "id": 2,
+      "back": "AIDA",
+      "front": "Attention, Interest, Desire, Action (Aufmerksamkeit, Interresse, Wunsch, Handlung)-> Modell zur Werbewirkung"
+    },
+    { "id": 3, "back": "airtime", "front": "Sendezeit" },
+    { "id": 4, "back": "ambient noise", "front": "Umgebungsgeräusch" },
+    { "id": 5, "back": "ambitious", "front": "ehrgeizig,strebsam" }
+  ]
+}

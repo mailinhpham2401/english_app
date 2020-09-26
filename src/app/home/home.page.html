@@ -14,7 +14,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding id="main-content">
   <div class="input-group col-md-4 mx-auto">
     <input
       class="form-control py-2 border-right-0 border"
@@ -50,11 +50,8 @@
     </ion-content>
   </ion-menu>
 
-  <app-flash-card
-    *ngFor="let flashcard of (flashCardList|async) | filter:searchText"
-  >
+  <app-flash-card *ngFor="let flashcard of flashcards | filter:searchText">
     <div class="flash-card-front">{{flashcard.front}}</div>
-
     <div class="flash-card-back container-fluid">
       <div class="row">
         <div class="col-5 col-md-5"></div>
@@ -63,7 +60,7 @@
           <div class="row">
             <div class="col-0">
               <ion-buttons>
-                <ion-button color="secondary" routerLink="/create">
+                <ion-button color="secondary" [routerLink]="['/create']">
                   <ion-icon name="add-outline"></ion-icon>
                 </ion-button>
               </ion-buttons>

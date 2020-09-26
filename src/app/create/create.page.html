@@ -8,25 +8,17 @@
 </ion-header>
 
 <ion-content padding>
-  <form [formGroup]="addFlashCard" (submit)="createFlashCard()">
-    <div class="flip-container" (click)="flip()" [class.flipped]="flipped">
-      <div class="flipper">
-        <div class="flash-card-front">
-          <ion-input formControlName="front" type="text" placeholder="">
-          </ion-input>
-        </div>
-        <div class="flash-card-back">
-          <ion-input formControlName="back" type="text" placeholder="">
-          </ion-input>
-        </div>
-      </div>
-    </div>
-    <ion-button
-      expand="block"
-      type="submit"
-      [disabled]="!createFlashCard.valid"
-    >
-      Zur Liste hinfügen
-    </ion-button>
-  </form>
+  <ion-item>
+    <ion-label position="floating">Englische Vokabel</ion-label>
+    <ion-input type="text" [(ngModel)]="flashcard.back" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Übersetzung</ion-label>
+    <ion-input type="text" [(ngModel)]="flashcard.front" required></ion-input>
+  </ion-item>
+
+  <ion-button class="ion-padding" (click)="createFlashCard(flashcard)">
+    Zur Liste hinfügen
+  </ion-button>
 </ion-content>

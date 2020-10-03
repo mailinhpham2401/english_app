@@ -12,8 +12,8 @@ Users can see each flashcard as they open the app, can see the translation when 
 
 ### Install
 
-npm install --save-dev @angular-devkit/build-angular
-npm install --save firebase
-ng add @angular/fire
+> npm install --save-dev @angular-devkit/build-angular
+> npm install --save firebase
+> ng add @angular/fire
 The Project is used with Ionic 5, run:
-ionic serve
+> ionic serve
